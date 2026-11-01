@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg: #fff; --fg: #1f1f1f; --muted: #6b6b6b; --track: #e8e6e1; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1f1e; --fg: #ececec; --muted: #9a9a9a; --track: #3a3a38; } }
+  body { margin: 0; width: 260px; padding: 14px 16px; background: var(--bg); color: var(--fg); font: 13px system-ui, sans-serif; }
+  .row { margin-bottom: 14px; }
+  .row:last-child { margin-bottom: 0; }
+  .head { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 6px; }
+  .bar { height: 8px; border-radius: 4px; background: var(--track); overflow: hidden; }
+  .fill { height: 100%; width: 0; background: #2e9e5b; }
+  .reset, #msg { color: var(--muted); font-size: 12px; margin-top: 5px; }
+  a { color: #d97757; }
+</style>
+</head>
+<body>
+  <div id="msg">Loading…</div>
+  <div id="data" hidden>
+    <div class="row" id="five_hour">
+      <div class="head"><span>5-hour limit</span><span class="pct"></span></div>
+      <div class="bar"><div class="fill"></div></div>
+      <div class="reset"></div>
+    </div>
+    <div class="row" id="seven_day">
+      <div class="head"><span>Weekly limit</span><span class="pct"></span></div>
+      <div class="bar"><div class="fill"></div></div>
+      <div class="reset"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
